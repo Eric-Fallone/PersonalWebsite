@@ -1,0 +1,30 @@
+<% include ../partials/header %>
+<div class="container">
+  <div class="row">
+      <h1 class="col-md-12 text-center"><%=post.title%></h1>
+      <div class="col-md-12">
+          <p class="d-inline"><%=post.author.username%></p>
+          <p class="d-inline"><%=moment(post.createdDate).fromNow()%></p>
+      </div>
+      <div class="col-md-4 col-xs-12">
+        <a class="thumbnail">
+          <img class="img-responsive" src="<%=post.imgsource %>">
+        </a>
+      </div>
+      <div class="col-md-8 col-xs-12">
+        <p><%=post.quote%></p>
+      </div>
+      <div class="col-md-12">
+          <p><%=post.text%></p>
+      </div>
+  </div>
+  <% if(currentUser && post.author.id.equals(currentUser._id) || currentUser && currentUser.isAdmin){ %>
+    <div class="pull-right">
+      <a class="btn btn-warning" href="/blog/<%= post.catagory %>/<%= post.title %>/edit">Edit</a>
+      <form class="delete-form" action="/blog/<%= post.title %>?_method=DELETE" method="POST">
+        <button class="btn btn-xs btn-danger">DELETE</button>
+      </form>
+    </div>
+  <% } %>
+</div>
+<% include ../partials/footer %>

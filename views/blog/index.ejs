@@ -1,0 +1,22 @@
+<% include ../partials/header %>
+<div class="container">
+  <h3 class="text-center"> <%=allPosts.catagory%></h3>
+  <h3 class="text-center"> <%=allPosts.description%></h3>
+  <div class="row blog-index-holder">
+      <% allPosts.blogposts.forEach(function(post){ %>
+        <div class="col-xs-12 col-sm-6 col-md-4 blog-post">
+          <a href="/blog/<%=post.catagory%>/<%=post.title%>">
+            <div class="thumbnail blog-thumb-container" style="width:100%;">
+              <img class="img-thumbnail" src="<%=post.imgsource %>">
+              <div class="blog-thumb-over">
+                <p class="blog-thumb-title"><%=post.title%></p>
+              </div>
+            </div>
+          </a>
+        </div>
+      <% }); %>
+  </div>
+  <a class="btn btn-primary float-right" href ="/blog/<%= catagory %>/new">Add Post</a>
+</div>
+
+<% include ../partials/footer %>
