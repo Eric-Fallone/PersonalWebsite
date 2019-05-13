@@ -51,6 +51,20 @@ router.get("/contact", function(req,res){
   res.render("contact");
 });
 
+router.post("/contact",   function(req, res){
+  email = {
+    first:req.body.first,
+    last:req.body.last,
+    email:req.body.email,
+    message:req.body.emailmsg,
+    telephone:req.body.tele,
+    company:req.body.company
+  };
+  console.log(email);
+  req.flash("success","Email sent");
+  res.redirect("/");
+});
+
 router.get("/c/:company", function(req,res){
   res.render("company");
 });

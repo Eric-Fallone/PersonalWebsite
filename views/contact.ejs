@@ -1,21 +1,54 @@
 <% include ./partials/header %>
     <div class="container" style="max-width: 620px">
       <h1 style="text-align: center">Contact Me</h1>
-          <form action="" method="post">
-              <div class="row no-gutters">
-                <div class="col-xs-4 col-md-2 text-right">
+          <form action="/contact" method="post">
+              <div class="row">
+                <!-- First Name -->
+                <div class="col-3 col-md-3 text-right">
                   <label for="first">First:</label>
                 </div>
-                <div class="col-xs-8 col-md-3">
+                <div class="col-9 col-md-3">
                   <input class="form-control" id="first" type="text" placeholder="" name ="first">
                 </div>
-                <div class="col-xs-4 col-md-2 text-right">
+                <!-- Last Name -->
+                <div class="col-3 col-md-1 text-right">
                   <label for="last">Last:</label>
                 </div>
-                <div class="col-xs-8 col-md-5">
+                <div class="col-9 col-md-5">
                   <input class="form-control" id="last" type="text" placeholder="" name ="last">
                 </div>
-              </div>
+                <!-- Email  -->
+                <div class="col-3 text-right">
+                  <label for="email">Email:</label>
+                </div>
+                <div class="col-9 ">
+                  <input class="form-control" id="email" type="text" placeholder="" name ="email">
+                </div>
+                <!-- Email msg -->
+                <div class="col-3 text-right">
+                  <label for="emailmsg">Message:</label>
+                </div>
+                <div class="col-9 ">
+                  <textarea class="form-control" id="emailmsg" rows="4" name ="emailmsg"></textarea>
+                </div>
+                <!-- Telephone -->
+                <div class="col-3 text-right">
+                  <label for="tele">Telephone:</label>
+                </div>
+                <div class="col-9">
+                  <input class="form-control" id="tele" type="text" placeholder="" name ="tele">
+                </div>
+                <!-- Company-->
+                <div class="col-3 text-right">
+                  <label for="company">Company:</label>
+                </div>
+                <div class="col-9">
+                  <input class="form-control" id="company" type="text" placeholder="<%= %>" name ="company">
+                </div>
+                <!-- button-->
+                <div class="col-12">
+                  <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
           </form>
     </div>
 <% include ./partials/footer %>
