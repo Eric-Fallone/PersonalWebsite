@@ -95,6 +95,10 @@ img{
   background-color: lightblue;
   padding: 7px 6px 5px 6px;
 }
+.chat-icon:hover{
+  background-color: blue;
+  padding: 7px 6px 5px 6px;
+}
 
 .chat-box{
   background-color: white;
@@ -112,10 +116,14 @@ img{
   overflow: hidden;
 }
 
-.chat-box:hover{
+.chat-box-expanded{
   height: 350px;
   width: 270px;
 }
+#chatbox{
+  cursor: pointer;
+}
+
 /* end chat boxes */
 #messages {
   border-style: solid;

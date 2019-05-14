@@ -1,4 +1,3 @@
-
 $(function () {
   var socket = io();
 
@@ -19,6 +18,9 @@ $(function () {
     $('#messages').append($('<li class="list-group-item">').text(msg));
   });
 
+  $("#chatbox").click(function() {
+    $("#chatbox-holder").toggleClass("chat-box-expanded");
+  });
 });
 
 getMessages = function(){
