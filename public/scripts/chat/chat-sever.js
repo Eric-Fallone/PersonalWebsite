@@ -1,5 +1,6 @@
 var socket = require('socket.io');
 var request = require('request');
+var User = require("../../../models/user");
 
 module.exports={
   startServer: function(sever){
@@ -19,7 +20,7 @@ module.exports={
 }
 
 getWebHook = function(msg) {
-  var test ={
+  var discMsg ={
     username:"Personal Website",
     avatar_url:"https://images-na.ssl-images-amazon.com/images/I/71YURG2o%2BdL._SX425_.jpg",
     content:"<@160488660951629824> "+msg
@@ -28,7 +29,7 @@ getWebHook = function(msg) {
     request({
         url: "https://discordapp.com/api/webhooks/577724413668229161/ajwhBT4HHABcrkK6NFwoWlxwot--VA1prH6PYnn_PKLTEyXsYQoBK3yBUHzYCslqbqz5",
         method:'post',
-        json: test,
+        json: discMsg,
       }, function (error, response, body) {
           if (!error && response.statusCode === 200) {
             console.log(body) // Print the json response
