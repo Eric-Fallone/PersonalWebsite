@@ -5,7 +5,10 @@ var UserSchema = new mongoose.Schema({
     username: String,
     password: String,
     isAdmin: {type: Boolean, default: false},
-    chatmsgs:[{type:String}]
+    chatmsgs:[{
+      type: mongoose.Schema.Types.ObjectId,
+      ref:"Msg"
+    }]
 });
 
 UserSchema.plugin(passportLocalMongoose)

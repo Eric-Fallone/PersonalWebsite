@@ -1,28 +1,35 @@
+
 $(function () {
   var socket = io();
 
-  messages = getMessages();
-
-  messages.forEach(function(msg){
-    $('#messages').append($('<li class="list-group-item">').text(msg));
-  });
-
   $('#chatform').submit(function(e){
     e.preventDefault(); // prevents page reloading
-    socket.emit('chat message', $('#m').val());
+    socket.emit('chat message', {
+      user:$("#username").text(),
+      msg:$('#m').val()
+    });
     $('#m').val('');
     return false;
   });
 
   socket.on('chat message', function(msg){
-    $('#messages').append($('<li class="list-group-item">').text(msg));
+    if(msg.user == $("#username").text()){
+      $('#messages').append($('<li class="list-group-item">').text(msg.msg));
+    }
   });
 
   $("#chatbox").click(function() {
     $("#chatbox-holder").toggleClass("chat-box-expanded");
   });
 });
+//loads all chat messages after page loads
+$(document).ready(function(){
+  if($("#username").length){
+    $.getJSON("/chat/"+$("#username").text(), function( data ){
+      $.each( data.chatmsg, function(index, value){
 
-getMessages = function(){
-  return ["meow","asd","2","1"];
-}
+        $('#messages').append($('<li class="list-group-item">').text(value.msg));
+      });
+    });
+  }
+});

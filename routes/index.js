@@ -2,6 +2,7 @@ var express = require("express");
 var router  = express.Router();
 var passport = require("passport");
 var User = require("../models/user");
+var emailer = require("../public/scripts/notifications/email.js")
 
 router.get("/", function(req,res){
   res.render("landing");
@@ -60,7 +61,7 @@ router.post("/contact",   function(req, res){
     telephone:req.body.tele,
     company:req.body.company
   };
-  console.log(email);
+  emailer.sendEmail(email);
   req.flash("success","Email sent");
   res.redirect("/");
 });

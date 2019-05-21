@@ -1,6 +1,7 @@
 var socket = require('socket.io');
-var request = require('request');
+var discord = require('../notifications/discord.js')
 var User = require("../../../models/user");
+var Msg = require("../../../models/msg");
 
 module.exports={
   startServer: function(sever){
@@ -11,28 +12,26 @@ module.exports={
       console.log('made socket connection',socket.id);
 
       socket.on('chat message', function(msg){
-        console.log('message: ' + msg);
-        io.emit('chat message', msg);
-        getWebHook(msg);
+        console.log('message: ' + msg.user);
+        User.findOne({username:msg.user}, function(err, user) {
+          if(err){
+            console.log(err);
+          } else{
+            var newMsgIn = {msg:msg.msg,isEric:false}
+            Msg.create(newMsgIn,function(err, newMsg){
+              if(err){
+                console.log(err);
+              }else{
+                user.chatmsgs.push(newMsg._id);
+                user.save();
+                newMsg.save();
+                io.emit('chat message', msg);
+                discord.webHook("Chat message from: "+msg.user+" -"+ msg.msg);
+              }
+            });
+          }
+        });
       });
     });
   }
 }
-
-getWebHook = function(msg) {
-  var discMsg ={
-    username:"Personal Website",
-    avatar_url:"https://images-na.ssl-images-amazon.com/images/I/71YURG2o%2BdL._SX425_.jpg",
-    content:"<@160488660951629824> "+msg
-  };
-
-    request({
-        url: "https://discordapp.com/api/webhooks/577724413668229161/ajwhBT4HHABcrkK6NFwoWlxwot--VA1prH6PYnn_PKLTEyXsYQoBK3yBUHzYCslqbqz5",
-        method:'post',
-        json: discMsg,
-      }, function (error, response, body) {
-          if (!error && response.statusCode === 200) {
-            console.log(body) // Print the json response
-          }
-      });
-  }
