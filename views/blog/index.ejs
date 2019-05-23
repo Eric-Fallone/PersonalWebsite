@@ -1,8 +1,8 @@
 <% include ../partials/header %>
-<div class="container">
+
   <h3 class="text-center"> <%=allPosts.catagory%></h3>
   <h3 class="text-center"> <%=allPosts.description%></h3>
-  <div class="row blog-index-holder">
+  <div class="row blog-index-holder" style="background-color:  #ec0be1;">
       <% allPosts.blogposts.forEach(function(post){ %>
         <div class="col-xs-12 col-sm-6 col-md-4 blog-post">
           <a href="/blog/<%=post.catagory%>/<%=post.title%>">
@@ -17,6 +17,6 @@
       <% }); %>
   </div>
   <a class="btn btn-primary float-right" href ="/blog/<%= catagory %>/new">Add Post</a>
-</div>
+
 
 <% include ../partials/footer %>

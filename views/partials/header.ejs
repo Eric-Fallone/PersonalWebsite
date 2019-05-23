@@ -18,7 +18,7 @@
       <script src="/scripts/chat/chat-client.js"></script>
   </head>
   <body>
-    <nav class="navbar navbar-expand-md navbar-light bg-light">
+    <nav class="navcontainer navbar navbar-expand-md navbar-light bg-light">
       <div class="container navwidth">
         <div class="row">
           <div class="col-12">
@@ -91,13 +91,13 @@
         </div>
       </div>
     </nav>
+<div class="container bodycontainer">
+  <div class="container" style="padding-top: 10px;">
+     <% if(error && error.length > 0) { %>
+       <div class="alert alert-danger" ><p><%=error %></p></div>
+     <% } %>
 
-    <div class="container" style="padding-top: 10px;">
-       <% if(error && error.length > 0) { %>
-         <div class="alert alert-danger" ><p><%=error %></p></div>
-       <% } %>
-
-       <% if(success && success.length > 0) { %>
-         <div class="alert alert-success"><p><%= success %></p></div>
-       <% } %>
-    </div>
+     <% if(success && success.length > 0) { %>
+       <div class="alert alert-success"><p><%= success %></p></div>
+     <% } %>
+  </div>
