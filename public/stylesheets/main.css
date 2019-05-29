@@ -3,12 +3,14 @@
 html {
   position: relative;
   min-height: 100%;
+  overflow: hidden;
 }
 body {
   /* Margin bottom by footer height */
-  margin-bottom: 60px;
-  background-color: lightgray;
-    height: 100%;
+  margin-bottom: 30px;
+  background-color: #003140;
+
+
 }
 img{
   border-radius: 25px;
@@ -19,29 +21,23 @@ img{
   width: 100%;
   /* Set the fixed height of the footer here */
   height: 30px;
-  background-color: #f5f5f5;
 }
 
 /* Body container set color */
 .bodycontainer{
-  background-color: #0be1ec;
+  background-color:#00C5FF ;
+  max-width: 720px;
+  min-height: 100%;
   height: 100%;
 }
 
-.container .text-muted {
-  margin: 20px 0;
-}
-
-.container{
-    max-width: 720px;
-}
 
 .navwidth{
   max-width: 870px;
 }
 
 .navcontainer{
-  background-color:#ec0b71;
+  background-color:#007599;
 }
 
 /* Thumbnail styles */
@@ -70,7 +66,7 @@ img{
   bottom: 100%;
   left: 0;
   right: 0;
-  background: rgba(225, 0, 0, .5);
+  background: rgba(0, 197, 255, .5);
   overflow: hidden;
   width: 100%;
   height:0;
@@ -84,7 +80,8 @@ img{
 
 .blog-thumb-title{
   color:black;
-  font-size: 20px;
+  font-size: 30px;
+  font-weight: bold;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -103,11 +100,11 @@ img{
 
 /* chat boxes */
 .chat-icon{
-  background-color: lightblue;
+  background-color: #00C5FF;
   padding: 7px 6px 5px 6px;
 }
 .chat-icon:hover{
-  background-color: blue;
+  background-color: #00ffff;
   padding: 7px 6px 5px 6px;
 }
 
