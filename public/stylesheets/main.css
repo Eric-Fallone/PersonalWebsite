@@ -9,6 +9,7 @@ body {
   /* Margin bottom by footer height */
   margin-bottom: 30px;
   background-color: #003140;
+  background: radial-gradient(circle, rgba(0,197,255,1) 69%, rgba(0,49,64,1) 100%);
 
 
 }
