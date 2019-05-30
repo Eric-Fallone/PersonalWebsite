@@ -93,11 +93,6 @@ img{
 }
 /* end blog thumbnail text overlay*/
 
-.blog-index-holder{
-  border-top: 5px solid;
-  border-bottom: 5px solid;
-  border-radius: 25px;
-}
 
 /* chat boxes */
 .chat-icon{
@@ -110,7 +105,7 @@ img{
 }
 
 .chat-box{
-  background-color: white;
+  background-color: #003140;
   border-radius: 25px;
   border-style: solid;
   border-width:1px;
@@ -135,6 +130,7 @@ img{
 
 /* end chat boxes */
 #messages {
+  background-color: white;
   border-style: solid;
   border-top: none;
   border-width:1px;
