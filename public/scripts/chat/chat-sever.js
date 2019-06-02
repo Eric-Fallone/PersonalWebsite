@@ -17,7 +17,7 @@ module.exports={
           if(err){
             console.log(err);
           } else{
-            var newMsgIn = {msg:msg.msg,isEric:false}
+            var newMsgIn = {msg:msg.msg,isEric:msg.isEric}
             Msg.create(newMsgIn,function(err, newMsg){
               if(err){
                 console.log(err);
@@ -26,7 +26,7 @@ module.exports={
                 user.save();
                 newMsg.save();
                 io.emit('chat message', msg);
-                discord.webHook("Chat message from: "+msg.user+" -"+ msg.msg);
+                discord.webHook("Chat message from: "+msg.user+" - "+ msg.msg);
               }
             });
           }

@@ -16,9 +16,10 @@
         </div>
       <% }); %>
   </div>
+  <% if( currentUser && currentUser.isAdmin ===true ) { %>
   <div class="text-center mt-3 mb-5">
     <a class="btn btn-primary text-center" href ="/blog/<%= catagory %>/new">Add Post</a>
   </div>
-
+  <% } %>
 
 <% include ../partials/footer %>
