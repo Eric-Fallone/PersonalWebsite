@@ -112,7 +112,7 @@ img{
 }
 
 .chat-box{
-  background-color: #003140;
+  background-color: rgba(0,143,185,1);
   border-radius: 25px;
   border-style: solid;
   border-width:2px;
@@ -135,7 +135,7 @@ img{
   cursor: pointer;
 }
 
-#messages {
+.messages {
   background-color: white;
   border-style: solid;
   border-top: none;
@@ -143,22 +143,33 @@ img{
   height: 240px;
   width: 240px;
   overflow-y: scroll;
+  margin-bottom: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+
 }
-#messages > li{
+.messages > li{
   padding: 8px 2px 8px 2px;
   margin-top: 2px;
   margin-bottom: 2px;
   border-radius: 8px;
   overflow-wrap: break-word
 }
-#messages > .notEric{
+.messages > .notEric{
   background-color: orange;
   margin-left: 20px;
   margin-right: 4px;
 }
 
-#messages > .isEric{
+.messages > .isEric{
   background-color: lightblue;
   margin-left: 4px;
   margin-right: 20px;
+}
+#footer_message_input > input{
+  border-bottom-left-radius: 10px;
+  margin-right: 2px;
+}
+#footer_message_input > button{
+  border-bottom-right-radius: 10px;
 }

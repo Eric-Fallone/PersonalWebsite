@@ -12,7 +12,7 @@ module.exports={
       console.log('made socket connection',socket.id);
 
       socket.on('chat message', function(msg){
-        console.log('message: ' + msg.user);
+        
         User.findOne({username:msg.user}, function(err, user) {
           if(err){
             console.log(err);
@@ -26,7 +26,9 @@ module.exports={
                 user.save();
                 newMsg.save();
                 io.emit('chat message', msg);
-                discord.webHook("Chat message from: "+msg.user+" - "+ msg.msg);
+                if(newMsg.isEric == false){
+                  discord.webHook("Chat message from: "+msg.user+" - "+ msg.msg);
+                }
               }
             });
           }

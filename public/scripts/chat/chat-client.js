@@ -2,45 +2,66 @@
 $(function () {
   var socket = io();
 
-  $('#chatform').submit(function(e){
+//not Eric sending a message
+  $('#footer_message_input').submit(function(e){
     e.preventDefault(); // prevents page reloading
     socket.emit('chat message', {
       user:$("#username").text(),
-      msg:$('#m').val(),
+      msg:$('#footer_message_input_m').val(),
       isEric:false
     });
-    $('#m').val('');
+    $('#footer_message_input_m').val('');
     return false;
   });
 
+//Eric sending a message
+$('.ericMsg').submit(function(e){
+  e.preventDefault(); // prevents page reloading
+
+  socket.emit('chat message', {
+    user:$(this).parent("div").parent("div").children("H3")[0].outerText,
+    msg:$(this).children("input").val(),
+    isEric:true
+  });
+  msg:$(this).children("input").val('');
+  return false;
+});
+
+//recieve message
   socket.on('chat message', function(msg){
     if(msg.user == $("#username").text()){
-      createMsg(msg.msg,msg.isEric);
+      createMsg(msg.msg,msg.isEric,"#footer_messages");
     }
+    createMsg(msg.msg,msg.isEric,"#"+msg.user+" > div ul");
+
   });
 
+//expand chat box
   $("#chatbox").click(function() {
     $("#chatbox-holder").toggleClass("chat-box-expanded");
   });
 });
+
 //loads all chat messages after page loads
 $(document).ready(function(){
   if($("#username").length){
     $.getJSON("/chat/"+$("#username").text(), function( data ){
       $.each( data.chatmsg, function(index, value){
-        createMsg(value.msg,value.isEric);
+        createMsg(value.msg,value.isEric,"#footer_messages");
       });
-      $('#messages').scrollTop($('#messages').height());
+      $('#footer_messages').scrollTop($('#footer_messages')[0].scrollHeight);
+      $('.messages').scrollTop(10000);
+      //$("#mydiv").scrollTop($("#mydiv")[0].scrollHeight)
     });
   }
 });
 
 //create chat msg
-function createMsg(msg, isEric){
+function createMsg(msg, isEric, selector){
   if(isEric == true){
-    $('#messages').append($('<li class="list-group-item isEric">').text(msg));
+    $(selector).append($('<li class="list-group-item isEric">').text(msg));
   }else{
-    $('#messages').append($('<li class="list-group-item notEric">').text(msg));
+    $(selector).append($('<li class="list-group-item notEric">').text(msg));
   }
-
+  $(selector).scrollTop($(selector)[0].scrollHeight);
 }

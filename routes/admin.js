@@ -2,6 +2,7 @@ var express = require("express");
 var router  = express.Router();
 var Blog = require("../models/blog");
 var Post = require("../models/post");
+var User = require("../models/user");
 var middleware = require("../middleware");
 var { isLoggedIn,checkUserPost, isAdmin} = middleware;
 
@@ -25,6 +26,16 @@ router.post("/newblog", isLoggedIn, isAdmin, function(req, res){
       console.log(err);
     }else{
       res.redirect("/blog/"+req.body.title)
+    }
+  });
+});
+
+router.get("/masterchat", isLoggedIn, isAdmin, function(req, res){
+  User.find().populate("chatmsgs").exec( function(err, allUsers){
+    if(err){
+      console.log(err);
+    } else{
+      res.render("admin/masterchat",{allUsers:allUsers});
     }
   });
 });
