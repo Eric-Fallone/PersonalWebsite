@@ -13,7 +13,7 @@ html {
 body {
   background: rgb(0,77,101);
   background: radial-gradient(circle, rgba(0,77,101,1) 34%, rgba(0,49,64,1) 100%);
-
+  padding-bottom: 40px;
 }
 img{
   border-radius: 25px;
@@ -33,6 +33,8 @@ img{
   overflow: auto;
   border-left: 2px solid black;
   border-right: 2px solid black;
+  padding-bottom: 14px;
+
 }
 
 
@@ -53,6 +55,15 @@ img{
 }
 
 .thumbnail {
+    padding: 0;
+}
+.blogthumbnail img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 25px;
+}
+.blogthumbnail {
     padding: 0;
 }
 .blog-post{
@@ -172,4 +183,11 @@ img{
 }
 #footer_message_input > button{
   border-bottom-right-radius: 10px;
+}
+
+.linebreak {
+  margin-top: 1px;
+  margin-bottom: 1px;
+  height: 1px;
+  border-top: 3px solid rgba(1, 1, 1, 1);
 }
