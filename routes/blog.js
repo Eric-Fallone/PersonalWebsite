@@ -17,7 +17,7 @@ router.get("/:catagory", function(req, res){
   });
 });
 //new
-router.get("/:catagory/new", function(req,res){
+router.get("/:catagory/new",isLoggedIn, function(req,res){
   res.render("blog/new",{catagory: req.params.catagory});
 });
 //create
@@ -60,7 +60,7 @@ router.get("/:catagory/:title", function(req, res){
 });
 
 //edit
-router.get("/:catagory/:title/edit",checkUserPost, function(req, res){
+router.get("/:catagory/:title/edit",isLoggedIn,checkUserPost, function(req, res){
   res.render("blog/edit",{catagory: req.params.catagory ,post:req.post});
 });
 //update
@@ -78,14 +78,21 @@ router.put("/:catagory/:title/edit", function(req, res){
 });
 //delete
 router.delete("/:title", isLoggedIn,checkUserPost, function(req, res){
-  var cata =  req.post.title;
+  var cata =  req.post.catagory;
+  var post_id = req.post._id;
+  console.log(post_id);
   console.log("----------------------------------------------");
-  Post.remove({title: req.post.title},function(err) {
+  Blog.findOneAndUpdate(cata, {$pull: {blogposts:post_id}},function(err,b){
+    console.log(b);
+  });
+
+  Post.deleteOne({_id:post_id},function(err) {
         if(err) {
             req.flash('error', err.message);
             res.redirect('/');
         } else {
-            req.flash('error', 'Blog deleted!');
+          console.log("meow");
+            req.flash('success', 'Blog deleted!');
             res.redirect('/blog/'+cata);
         }
       })

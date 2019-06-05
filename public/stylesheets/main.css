@@ -8,12 +8,11 @@ html,body {
 }
 html {
   position: relative;
-
 }
 body {
   background: rgb(0,77,101);
   background: radial-gradient(circle, rgba(0,77,101,1) 34%, rgba(0,49,64,1) 100%);
-  padding-bottom: 40px;
+  overflow: auto;
 }
 img{
   border-radius: 25px;
@@ -29,8 +28,7 @@ img{
   background: rgb(0,197,255);
   background: radial-gradient(circle, rgba(0,197,255,1) 0%, rgba(0,143,185,1) 100%);
   max-width: 720px;
-  height: 100%;
-  overflow: auto;
+  min-height: 95.5%; /*accounting for header size*/
   border-left: 2px solid black;
   border-right: 2px solid black;
   padding-bottom: 14px;
@@ -176,6 +174,9 @@ img{
   background-color: lightblue;
   margin-left: 4px;
   margin-right: 20px;
+}
+#footer_message_input {
+  width: 242px;
 }
 #footer_message_input > input{
   border-bottom-left-radius: 10px;
