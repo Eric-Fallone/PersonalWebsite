@@ -1,0 +1,14 @@
+$(document).ready(function(){
+  setTimeout(function(){
+    $(".title").fadeIn("slow");
+  },1000);
+  setTimeout(function(){
+    $(".aboutme").fadeIn("slow");
+  },2000);
+  setTimeout(function(){
+    $(".myproj").fadeIn("slow");
+  },3000);
+  setTimeout(function(){
+    $(".social_links").fadeIn("slow");
+  },4000);
+});

@@ -1,9 +1,44 @@
-<% include partials/header %>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
 
+      <title>Eric Fallone</title>
 
-  <div class=row>
-    <img src="https://i399.photobucket.com/albums/pp71/crawfordcpa/PembrokeLucy2.jpg" alt="corgi photo PembrokeLucy2.jpg" class="img-thumbnail rounded-top">
-  </div>
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+      <link rel="stylesheet" href="/stylesheets/landing.css">
+      <link rel="stylesheet" href="/stylesheets/livechat.css">
+      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+      <script src="/socket.io/socket.io.js"></script>
+      <script src="/scripts/chat/chat-client.js"></script>
+      <script src="/scripts/landing.js"></script>
+  </head>
+  <body>
+    <div class="">
+       <% if(error && error.length > 0) { %>
+         <div class="flash danger" style="margin-bottom: 0px;" ><p><%=error %></p></div>
+       <% } %>
+       <% if(success && success.length > 0) { %>
+         <div class="flash success" style="margin-bottom: 0px;"><p><%= success %></p></div>
+       <% } %>
+    </div>
+  <div class="bg">
+
+    <div class="content">
+      <h1 class="Eric_Fallone">Eric Fallone</h1>
+      <h2 class="title left">Title</h2>
+      <h2 class="aboutme right"><a href="/blog/Programming%20Projects">About me</a></h2>
+      <h2 class="myproj left">My Projects</h2>
+      <div class="social_links right">
+        <a><i class="fab fa-github fa-2x"></i></a>
+        <a><i class="fab fa-linkedin fa-2x"></i></a>
+      </div>
+    </div>
 
 <% include partials/footer %>

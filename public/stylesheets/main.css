@@ -21,7 +21,7 @@ a {
   color: inherit; /* blue colors for links too */
   text-decoration: inherit; /* no underline */
 }
-img{
+.thumbnail > tmb{
   border-radius: 25px;
 }
 .header {
@@ -115,99 +115,6 @@ img{
 }
 /* end blog thumbnail text overlay*/
 
-
-/* chat boxes */
-.chat-icon{
-  background-color: #00C5FF;
-  padding: 7px 6px 5px 6px;
-  width:49px;
-  height:49px;
-}
-.chat-icon:hover{
-  background-color: #00ffff;
-  padding: 7px 6px 5px 6px;
-}
-.loginmsg{
-  text-decoration: none;
-  height: 49px;
-  width: 160px;
-  padding-top: 8px;
-  position: fixed;
-  bottom: 5%;
-  right: 4.25%;
-  background-color: white;
-  border-radius: 25px;
-  border-style: solid;
-  border-width:2px;
-  background-color: rgba(0,143,185,1);
-  text-align: center;
-}
-
-.chat-box{
-  background-color: rgba(0,143,185,1);
-  border-radius: 25px;
-  border-style: solid;
-  border-width:2px;
-  height: 49px;
-  width: 49px;
-  position: fixed;
-  bottom: 5%;
-  right: 4.25%;
-  transition: height 0.5s, width 0.5s;
-  -webkit-transition: height 0.5s , width 0.5s;
-  text-align: center;
-  overflow: hidden;
-}
-
-.chat-box-expanded{
-  height: 350px;
-  width: 270px;
-}
-#chatbox{
-  cursor: pointer;
-}
-
-.messages {
-  background-color: white;
-  border-style: solid;
-  border-top: none;
-  border-width:1px;
-  height: 240px;
-  width: 240px;
-  overflow-y: scroll;
-  margin-bottom: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
-
-}
-.messages > li{
-  padding: 8px 2px 8px 2px;
-  margin-top: 2px;
-  margin-bottom: 2px;
-  border-radius: 8px;
-  overflow-wrap: break-word
-}
-.messages > .notEric{
-  background-color: orange;
-  margin-left: 20px;
-  margin-right: 4px;
-}
-
-.messages > .isEric{
-  background-color: lightblue;
-  margin-left: 4px;
-  margin-right: 20px;
-}
-#footer_message_input {
-  width: 242px;
-}
-#footer_message_input > input{
-  border-bottom-left-radius: 10px;
-  margin-right: 2px;
-}
-#footer_message_input > button{
-  border-bottom-right-radius: 10px;
-}
 
 .linebreak {
   margin-top: 1px;
