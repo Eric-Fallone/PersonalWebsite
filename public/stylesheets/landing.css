@@ -1,8 +1,8 @@
-a {
+h2 > a {
   color: inherit; /* blue colors for links too */
   text-decoration: inherit; /* no underline */
 }
-a:hover{
+h2 > a:hover{
   color: black;
   text-shadow: -1px 0 white, 0 1px white, 1px 0 black, 0 -1px white;
 }
@@ -10,11 +10,12 @@ p{
   margin-bottom: 0px;
 }
 
-body, html {
-  height: 100%;
-}
-
 .bg {
+  top: calc(0% + 40px);
+  left:0%;
+  position: absolute;
+  min-width: 100vw;
+  min-height: 100vh;
   /* The image used */
   background-image: url("https://i399.photobucket.com/albums/pp71/crawfordcpa/PembrokeLucy2.jpg");
 
@@ -37,9 +38,16 @@ body, html {
   color: white;
   text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
   overflow: hidden;
+  min-height: 357px;
 }
-
-.content > h2 {
+.title{
+  font-size: 2.5em;
+}
+.holder{
+  min-height: 30px;
+  min-width: 1000px;
+}
+.title, .aboutme, .myproj {
   display:none;
   position: relative;
 }
@@ -48,8 +56,8 @@ body, html {
   position: relative;
 }
 .social_links > a:hover{
-  color: blue;
-  text-shadow: -1px 0 blue, 0 1px blue, 1px 0 blue, 0 -1px blue;
+  color: white;
+  text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
   cursor: pointer;
 
 }

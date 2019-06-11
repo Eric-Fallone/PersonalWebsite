@@ -21,6 +21,28 @@ a {
   color: inherit; /* blue colors for links too */
   text-decoration: inherit; /* no underline */
 }
+
+.flash{
+  position: absolute;
+  top: 80%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  border-radius: 25px;
+  border-style: solid;
+  border-width:2px;
+  padding-left: 4px;
+  padding-right: 4px;
+  display: flex;
+  align-items: center;
+  padding: 2px;
+}
+.danger{
+  background-color: red;
+}
+.success{
+  background-color: green;
+}
 .thumbnail > tmb{
   border-radius: 25px;
 }

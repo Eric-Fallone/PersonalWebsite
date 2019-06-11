@@ -9,6 +9,7 @@
 
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
       <link rel="stylesheet" href="/stylesheets/main.css">
+      <link rel="stylesheet" href="/stylesheets/landing.css">
       <link rel="stylesheet" href="/stylesheets/livechat.css">
       <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 
@@ -16,6 +17,7 @@
       <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
       <script src="/socket.io/socket.io.js"></script>
+      <script src="/scripts/landing.js"></script>
       <script src="/scripts/chat/chat-client.js"></script>
   </head>
   <body>
@@ -35,6 +37,9 @@
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="/aboutEric">About</span></a>
+            </li>
             <!-- Navbar dropdown list Programing  -->
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -42,9 +47,9 @@
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                 <a class="dropdown-item" href="/blog/Programming Projects">Projects</a>
-                <a class="dropdown-item" href="#">Another action</a>
+                <a class="dropdown-item" href="/blog/Relvent Classes">Classes</a>
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#">Something else here</a>
+                <a class="dropdown-item" href="Older Projects">Older Projects</a>
               </div>
             </li>
             <!--   -->
@@ -55,9 +60,9 @@
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                 <a class="dropdown-item" href="/blog/Tigers">Tigers</a>
-                <a class="dropdown-item" href="#">Another action</a>
+              <!--  <a class="dropdown-item" href="#">Another action</a>
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#">Something else here</a>
+                <a class="dropdown-item" href="#">Something else here</a> -->
               </div>
             </li>
             <!--  Contract  -->
@@ -95,12 +100,13 @@
         </div>
       </div>
     </nav>
-<div class="container bodycontainer">
-  <div class="" style="padding-top: 10px;">
+    <!-- flash messages -->
+  <div class="">
      <% if(error && error.length > 0) { %>
-       <div class="alert alert-danger" ><p><%=error %></p></div>
+       <div class="flash danger" style="margin-bottom: 0px;" ><p><%=error %></p></div>
      <% } %>
      <% if(success && success.length > 0) { %>
-       <div class="alert alert-success"><p><%= success %></p></div>
+       <div class="flash success" style="margin-bottom: 0px;" ><p><%= success %></p></div>
      <% } %>
   </div>
+<div class="container bodycontainer">
