@@ -1,9 +1,10 @@
 /* chat boxes */
 .chat-icon{
-  background-color: #00C5FF;
+  background-color: white;
   padding: 7px 6px 5px 6px;
   width:49px;
   height:49px;
+  border-bottom: 1px solid black;
 }
 .chat-icon:hover{
   background-color: #00ffff;
@@ -26,7 +27,7 @@
 }
 
 .chat-box{
-  background-color: rgba(0,143,185,1);
+  background-color:lightgray;
   border-radius: 25px;
   border-style: solid;
   border-width:2px;

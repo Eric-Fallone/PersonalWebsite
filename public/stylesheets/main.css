@@ -54,14 +54,18 @@ a {
 /* Body container set color */
 .bodycontainer{
 
-  background: rgb(0,197,255);
+  /*background: rgb(0,197,255); // older background with blue gradient for main body
   background: radial-gradient(circle, rgba(0,197,255,1) 0%, rgba(0,143,185,1) 100%);
+  */
+  background-color: white;
   max-width: 720px;
   min-height: calc(100% - 40px);
 
   border-left: 2px solid black;
   border-right: 2px solid black;
+  border-top: 2px solid black;
   padding-bottom: 14px;
+  padding-top: 6px;
 
 }
 
@@ -80,6 +84,7 @@ a {
     height: auto;
     display: block;
     border-radius: 25px;
+    background-color: rgba(0,197,255,1);
 }
 
 .thumbnail {

@@ -1,4 +1,13 @@
 </div>
+<!-- flash holders -->
+<div class="">
+   <% if(error && error.length > 0) { %>
+     <div class="flash danger" style="margin-bottom: 0px;" ><p><%=error %></p></div>
+   <% } %>
+   <% if(success && success.length > 0) { %>
+     <div class="flash success" style="margin-bottom: 0px;" ><p><%= success %></p></div>
+   <% } %>
+</div>
 <!-- chat container -->
 <% if(currentUser){ %>
     <div id="chatbox-holder" class="container chat-box">

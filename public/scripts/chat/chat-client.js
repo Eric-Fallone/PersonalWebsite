@@ -1,6 +1,6 @@
 
 $(function () {
-  var socket = io();
+  var socket = io('//localhost:3000');
 
 //not Eric sending a message
   $('#footer_message_input').submit(function(e){

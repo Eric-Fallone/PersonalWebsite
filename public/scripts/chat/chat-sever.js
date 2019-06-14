@@ -12,7 +12,7 @@ module.exports={
       console.log('made socket connection',socket.id);
 
       socket.on('chat message', function(msg){
-        
+
         User.findOne({username:msg.user}, function(err, user) {
           if(err){
             console.log(err);

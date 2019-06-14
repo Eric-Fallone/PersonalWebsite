@@ -12,7 +12,8 @@ var express     = require("express"),
         Blog       = require("./models/blog"),
         Post        = require("./models/post"),
         chat = require('./public/scripts/chat/chat-sever.js'),
-        socket = require('socket.io');
+        socket = require('socket.io'),
+        normalizePort=require('normalize-port');
 
 require('dotenv').config();
 //routes
@@ -27,7 +28,7 @@ mongoose.connect(process.env.MONGOOSE_URL, {
   useNewUrlParser: true,
   useCreateIndex: true
 }).then(()=> {
-  console.log('Conncected to DB');
+  console.log('Connecected to DB');
 }).catch(err => {
   console.log("ERROR",err.message);
 });
@@ -65,8 +66,11 @@ app.use("/",indexRoute);
 app.use("/blog",blogRoute);
 app.use("/admin",adminRoute);
 app.use("/chat",chatRoute);
+var port = normalizePort(process.env.PORT || '3000');
 
-server= app.listen(4000,function(){
-  console.log("Sever Onling Port:4000")
+var server = require('http').createServer(app);
+server.listen(port,function(){
+  console.log("Sever Onling Port: "+port)
 });
+
 chat.startServer(server);
