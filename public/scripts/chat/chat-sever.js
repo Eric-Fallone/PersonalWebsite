@@ -5,8 +5,8 @@ var Msg = require("../../../models/msg");
 
 module.exports={
   startServer: function(sever){
+    var http = require('http').Server(sever);
     var io = socket(sever);
-
     io.on('connection',function(socket){
 
       console.log('made socket connection',socket.id);

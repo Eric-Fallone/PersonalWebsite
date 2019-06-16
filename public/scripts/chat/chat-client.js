@@ -1,7 +1,11 @@
 
 $(function () {
-  var socket = io('//localhost:3000');
 
+  if(location.hostname === "localhost" ){
+    var socket = io('//localhost:3000');
+  }else {
+    var socket = io('http://ericfallone.com');
+  }
 //not Eric sending a message
   $('#footer_message_input').submit(function(e){
     e.preventDefault(); // prevents page reloading

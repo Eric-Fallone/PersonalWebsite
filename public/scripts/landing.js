@@ -4,13 +4,13 @@ $(document).ready(function(){
   },1000);
   setTimeout(function(){
     $(".aboutme").fadeIn(2500);
-  },2000);
+  },1000);
   setTimeout(function(){
     $(".myproj").fadeIn(2500);
-  },3000);
+  },2000);
   setTimeout(function(){
     $(".social_links").fadeIn(2500);
-  },4000);
+  },3000);
 });
 $(".title").click(function(){
   $("h2").show("slow");

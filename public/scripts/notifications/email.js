@@ -10,7 +10,7 @@ var transporter = nodemailer.createTransport({
 
 module.exports={
   sendEmail :function(emailData) {
-    console.log("asd");
+    
     var mailOptions = {
       from: process.env.ERIC_EMAIL_ACCOUNT,
       to: process.env.ERIC_EMAIL_ACCOUNT,

@@ -22,6 +22,11 @@ a {
   text-decoration: inherit; /* no underline */
 }
 
+i{
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
 .flash{
   position: absolute;
   top: 80%;
@@ -144,6 +149,7 @@ a {
 
 
 .linebreak {
+  width: 100;
   margin-top: 1px;
   margin-bottom: 1px;
   height: 1px;
