@@ -14,7 +14,7 @@ p{
   top: calc(0% + 40px);
   left:0%;
   /* The image used */
-  background-image: url("https://i399.photobucket.com/albums/pp71/crawfordcpa/PembrokeLucy2.jpg");
+  background-image: url("../picture/landing.jpg");
 
   /* Full height */
   height: calc(100% - 40px);
@@ -24,6 +24,7 @@ p{
   background-repeat: no-repeat;
   background-size: cover;
 }
+
 
 .content{
   position: relative;
