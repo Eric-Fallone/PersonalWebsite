@@ -17,6 +17,9 @@ background: rgb(156,156,156);
 background: linear-gradient(90deg, rgba(156,156,156,1) 0%, rgba(92,92,92,1) 34%, rgba(92,92,92,1) 66%, rgba(156,156,156,1) 100%);
   overflow: auto;
 }
+p{
+  white-space: pre-wrap
+}
 .social_links_icon{
   padding-left: 10px;
   padding-right: 10px;

@@ -52,7 +52,7 @@ router.post("/:catagory", isLoggedIn, function(req, res){
 router.get("/:catagory/:title", function(req, res){
   Post.findOne({title:req.params.title} , function(err,foundPost){
     if(err || !foundPost){
-      console.log(err);
+      //console.log(err);
     } else{
       res.render("blog/show",{catagory: req.params.catagory ,post:foundPost});
     }
@@ -64,9 +64,10 @@ router.get("/:catagory/:title/edit",isLoggedIn,checkUserPost, function(req, res)
   res.render("blog/edit",{catagory: req.params.catagory ,post:req.post});
 });
 //update
-router.put("/:catagory/:title/edit", function(req, res){
+router.put("/:catagory/:title/edit",isLoggedIn,checkUserPost, function(req, res){
   var newData = {imgsource: req.body.imgsource, quote: req.body.quote, text: req.body.blogText};
-  Post.findOneAndUpdate(req.params.title, {$set: newData}, function(err, post){
+  
+  Post.findOneAndUpdate({title:req.params.title}, {$set: newData}, function(err, post){
       if(err){
           req.flash("error", err.message);
           res.redirect("back");
