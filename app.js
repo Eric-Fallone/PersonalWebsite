@@ -45,8 +45,13 @@ app.locals.moment = require('moment');
 // PASSPORT CONFIGURATION
 app.use(require("express-session")({
     secret: "Marcus, wins cutest dog!",
-    resave: false,
-    saveUninitialized: false
+    resave: true,
+    rolling: true,
+    saveUninitialized: false,
+    cookie: {
+      secure: false,
+      maxAge: 3600000 //1 hour
+    }
 }));
 
 app.use(passport.initialize());

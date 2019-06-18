@@ -85,9 +85,11 @@
   width: 242px;
 }
 #footer_message_input > input{
+  width: 70%;
   border-bottom-left-radius: 10px;
   margin-right: 2px;
 }
 #footer_message_input > button{
+  width: 25%;
   border-bottom-right-radius: 10px;
 }
