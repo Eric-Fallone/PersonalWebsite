@@ -73,7 +73,8 @@ app.use("/admin",adminRoute);
 app.use("/chat",chatRoute);
 var port = normalizePort(process.env.PORT || '3000');
 
-var server = require('http').createServer(app);
+var server = require('http').Server(app);
+
 server.listen(port,function(){
   console.log("Sever Onling Port: "+port)
 });

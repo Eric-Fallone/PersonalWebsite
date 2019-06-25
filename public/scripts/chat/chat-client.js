@@ -1,6 +1,6 @@
 
 $(function () {
-
+  
   if(location.hostname === "localhost" ){
     var socket = io('//localhost:3000');
   }else {

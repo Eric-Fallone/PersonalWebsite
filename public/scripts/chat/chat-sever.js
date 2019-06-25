@@ -1,12 +1,11 @@
-var socket = require('socket.io');
+//var socket = require('socket.io');
 var discord = require('../notifications/discord.js')
 var User = require("../../../models/user");
 var Msg = require("../../../models/msg");
 
 module.exports={
-  startServer: function(sever){
-    var http = require('http').Server(sever);
-    var io = socket(sever);
+  startServer: function(server){
+    var io = require('socket.io')(server);
     io.on('connection',function(socket){
 
       console.log('made socket connection',socket.id);
