@@ -9,7 +9,7 @@
    <% } %>
 </div>
 <!-- chat container -->
-<% if(currentUser){ %>
+  <% if(currentUser){ %>
     <div id="chatbox-holder" class="container chat-box">
       <div id="chatbox" class="row">
         <div class="col chat-icon">
@@ -26,15 +26,12 @@
           </form>
       </div>
     </div>
-  <% } %>
+  <% }else{ %>
+    <div id="login_link" class=" container chat-box loginmsg ">
+        <p class="login_link" >Login for live chat!</p>
+    </div>
+    <% } %>
 <!-- End chat container -->
 
-<!-- Bottom Nav Bar -->
-<!--<footer class="footer">
-  <div class="container">
-    <p class="text-dark">Eric Fallone</p>
-  </div>
-</footer> -->
-<!-- -->
   </body>
 </html>

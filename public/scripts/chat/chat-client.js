@@ -1,6 +1,6 @@
 
 $(function () {
-  
+
   if(location.hostname === "localhost" ){
     var socket = io('//localhost:3000');
   }else {
@@ -43,6 +43,9 @@ $('.ericMsg').submit(function(e){
 //expand chat box
   $("#chatbox").click(function() {
     $("#chatbox-holder").toggleClass("chat-box-expanded");
+  });
+  $("#login_link").click(function() {
+    window.location.href='/login';
   });
 });
 
