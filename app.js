@@ -8,12 +8,12 @@ var express     = require("express"),
     flash        = require("connect-flash"),
     session = require("express-session"),
     methodOverride = require("method-override"),
-        User        = require("./models/user"),
-        Blog       = require("./models/blog"),
-        Post        = require("./models/post"),
-        chat = require('./public/scripts/chat/chat-sever.js'),
-        socket = require('socket.io'),
-        normalizePort=require('normalize-port');
+    User        = require("./models/user"),
+    Blog       = require("./models/blog"),
+    Post        = require("./models/post"),
+    chat = require('./public/scripts/chat/chat-sever.js'),
+    socket = require('socket.io'),
+    normalizePort=require('normalize-port');
 
 require('dotenv').config();
 //routes
@@ -44,7 +44,7 @@ app.locals.moment = require('moment');
 
 // PASSPORT CONFIGURATION
 app.use(require("express-session")({
-    secret: "Marcus, wins cutest dog!",
+    secret: process.env.PASSPORT_SECRET,
     resave: true,
     rolling: true,
     saveUninitialized: false,
