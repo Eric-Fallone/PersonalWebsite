@@ -70,5 +70,7 @@ function createMsg(msg, isEric, selector){
   }else{
     $(selector).append($('<li class="list-group-item notEric">').text(msg));
   }
-  $(selector).scrollTop($(selector)[0].scrollHeight);
+  if($(selector)[0]){
+    $(selector).scrollTop($(selector)[0].scrollHeight);
+  }
 }
