@@ -154,3 +154,17 @@ p{
   height: 1px;
   border-top: 3px solid rgba(1, 1, 1, 1);
 }
+
+.hidden{
+  display: none;
+}
+
+.info{
+  border: 5px solid rgba(0,197,255,1);
+  border-radius: 25px;
+  padding: 5px;
+}
+
+.operator-holder:hover{
+  cursor: pointer;
+}

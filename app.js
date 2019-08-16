@@ -20,7 +20,8 @@ require('dotenv').config();
 var indexRoute = require("./routes/index"),
      blogRoute = require("./routes/blog"),
      adminRoute = require("./routes/admin"),
-     chatRoute = require("./routes/chat");
+     chatRoute = require("./routes/chat"),
+     rainbowRoute = require("./routes/rainbow");
 
 mongoose.Promise = global.Promise;
 
@@ -71,6 +72,8 @@ app.use("/",indexRoute);
 app.use("/blog",blogRoute);
 app.use("/admin",adminRoute);
 app.use("/chat",chatRoute);
+app.use("/rainbow", rainbowRoute);
+
 var port = normalizePort(process.env.PORT || '3000');
 
 var server = require('http').Server(app);

@@ -1,0 +1,44 @@
+<% include ../partials/header %>
+
+<h1>Rain-bee</h1>
+
+<p>Search:</p>
+<input type="text" id="search" name="search" value="">
+
+<div class="container pt-2 pb-2">
+  <div class="row">
+      <% for(var i=0; i<allOperators.length;i++){ %>
+        <div class="col-2 operator-holder">
+          <div class="thumbnail">
+            <img class="img-thumbnail r" src="<%=allOperators[i].imagelink %>">
+          </div>
+          <div class="info hidden">
+            <p class="name"><%=allOperators[i].name %></p>
+            <p>Hard Counters: <%=allOperators[i].hardcounters %></p>
+            <p>Soft Counters: <%=allOperators[i].softcounters %></p>
+            <p>Other: <%=allOperators[i].other %></p>
+          </div>
+        </div>
+      <% } %>
+  </div>
+</div>
+
+<div class="container">
+  <select id="SelectOperator">
+    <% for(var i=0; i<allOperators.length;i++){ %>
+      <option value="<%=allOperators[i].name %>"><%=allOperators[i].name %></option>
+    <% } %>
+  </select>
+
+  <select id="SelectAction">
+    <option value="edit">Edit</option>
+    <option value="delete">Delete</option>
+    <option value="new">New Operator</option>
+  </select>
+
+  <button type="button" id="SelectButton" name="SelectButton">Action </button>
+</div>
+
+
+
+<% include ../partials/footer %>
