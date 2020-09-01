@@ -21,16 +21,6 @@ router.get("/new", isLoggedIn, function(req,res){
 });
 
 router.post("/", isLoggedIn, function(req, res){
-  if(req.body.Operator == ""){
-    req.flash('error', "You left the operator blank you big dumb dumb!");
-    res.redirect("back");
-    return;
-  }
-  if(req.body.imgsource == ""){
-    req.flash('error', "You left the image blank you big dumb dumb!");
-    res.redirect("back");
-    return;
-  }
 
   var author = {
     id: req.user._id,

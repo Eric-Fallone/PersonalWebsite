@@ -1,15 +1,14 @@
 <% include ../partials/header %>
 
 <h1>Rain-bee</h1>
-<div class="container d-inline">
-  <label for="search">Search:</label>
-  <input type="text" id="search" name="search" value="">
-</div>
+
+<p>Search:</p>
+<input type="text" id="search" name="search" value="">
 
 <div class="container pt-2 pb-2">
   <div class="row">
       <% for(var i=0; i<allOperators.length;i++){ %>
-        <div class="col-3 operator-holder">
+        <div class="col-2 operator-holder">
           <div class="thumbnail">
             <img class="img-thumbnail r" src="<%=allOperators[i].imagelink %>">
           </div>
