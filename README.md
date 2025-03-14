@@ -1,6 +1,10 @@
 # PersonalWebsite
-Personal Website detailing stuff I have done.
+This is my old website so show off my game portfolio. 
+It was completely overdesigned and I ended up making a simplier one, because I was being spammed by bots. 
 
+I created a login/admin system to allow people to live chat with me. 
+It would send me a discord notification if they used the live chat or an email and a notification if they used that. 
+I used mongdoDB 
 
 
 
@@ -8,7 +12,7 @@ Personal Website detailing stuff I have done.
 
 Colors:
 Background side of Page
- #004035
+#004035
 Background main container
 #00C5FF  
 
